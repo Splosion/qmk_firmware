@@ -8,7 +8,7 @@
 enum custom_keycodes {
 	M_USER1 = SAFE_RANGE, //https://docs.qmk.fm/custom_quantum_functions#defining-a-new-keycode
 	M_USER2,
-    M_PASS,
+    M_ADMIN,
 };
 
 
@@ -29,8 +29,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         MO(1),   MO(2),   KC_SPC,   KC_ENT
     ),
 	[1] = LAYOUT(
-		M_USER1,  M_USER2,  M_PASS,   KC_F24,
-        KC_F21,   KC_F22,   KC_F23,   KC_F24,
+		M_USER1,  M_USER2,  M_ADMIN,   DM_PLY1,
+        KC_F21,   KC_F22,   KC_F23,   DM_REC1,
         KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS
 	),
 	[2] = LAYOUT(
@@ -55,10 +55,10 @@ void keyboard_post_init_user(void) {
 //https://docs.qmk.fm/feature_macros
 bool process_record_user(uint16_t keycode, keyrecord_t * record) {
   switch (keycode) {
-	case M_PASS:
+	case M_ADMIN:
 	if (record->event.pressed) //keydown only
 	{
-	SEND_STRING("E6\\p*E9\"fe*ERT%,");
+	SEND_STRING(".\\administrator");
 	}
 	break;
 	case M_USER1:
@@ -70,7 +70,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t * record) {
 	case M_USER2:
 	if (record->event.pressed) //keydown only
 	{
-	SEND_STRING("@parentpay.com");
+	SEND_STRING("@coverwise.com");
 	}
 	break;
   }

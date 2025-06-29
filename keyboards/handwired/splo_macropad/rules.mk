@@ -17,3 +17,4 @@ BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 AUDIO_ENABLE = no           # Audio output
 DEFERRED_EXEC_ENABLE = yes	# Deferred Execution for timer callbacks
+DYNAMIC_MACRO_ENABLE = yes  # Dynamic Macros
