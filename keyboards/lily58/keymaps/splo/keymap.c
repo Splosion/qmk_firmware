@@ -85,9 +85,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // https://docs.qmk.fm/features/dynamic_macros
 [_RAISE] = LAYOUT(
   _______, M_ADMIN, M_USER1, M_USER2, M_PIN, M_BIT,                     _______, _______, _______, _______, _______, _______,
-  KC_GRV,  DM_PLY1,    DM_REC1,    KC_UP,    KC_4,    KC_MUTE,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
-  _______,  _______,    KC_LEFT,   KC_DOWN,   KC_RGHT,   KC_VOLU,                       XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,
-  _______,   _______,   KC_MPRV,   KC_MPLY,  KC_MNXT,  KC_VOLD,   _______, _______,  KC_MINS, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
+  KC_GRV, DM_PLY1,  DM_REC1,    KC_UP,    KC_4,    KC_MUTE,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
+  _______, _______, KC_LEFT,   KC_DOWN,   KC_RGHT,   KC_VOLU,                       XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,
+  _______, _______, KC_MPRV,   KC_MPLY,  KC_MNXT,  KC_VOLD,   _______, _______,  KC_MINS, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
                              _______, _______, _______,  _______, _______,  _______, _______, _______
 ),
 /* GAMMA
@@ -106,9 +106,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [_GAMMA] = LAYOUT(
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_P7, KC_P8, KC_P9, XXXXXXX, KC_DEL,
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_P4, KC_P5, KC_P6, XXXXXXX, XXXXXXX,
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_HOME, KC_END, KC_MINS, KC_P1, KC_P2, KC_P3, XXXXXXX, KC_NUHS,
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_P7,   KC_P8,   KC_P9,   XXXXXXX, KC_DEL,
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_P4,   KC_P5,   KC_P6,   XXXXXXX, XXXXXXX,
+  XXXXXXX, C(KC_Z), C(KC_X), C(KC_C), _______, C(KC_V), KC_HOME, KC_END,  KC_MINS, KC_P1,   KC_P2,   KC_P3, XXXXXXX, KC_NUHS,
                              _______, _______, _______, _______, _______,  _______, _______, KC_APP
   ),
   /* ADJUST
@@ -129,7 +129,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_P7, KC_P8, KC_P9, XXXXXXX, KC_DEL,
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_P4, KC_P5, KC_P6, XXXXXXX, XXXXXXX,
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_P1, KC_P2, KC_P3, XXXXXXX, KC_NUHS,
+  XXXXXXX, C(KC_Z), C(KC_X), C(KC_C), _______, C(KC_V), XXXXXXX, XXXXXXX, XXXXXXX, KC_P1, KC_P2, KC_P3, XXXXXXX, KC_NUHS,
                              _______, _______, _______, _______, _______,  _______, _______, KC_APP
   )
 };
