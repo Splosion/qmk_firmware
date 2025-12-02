@@ -29,8 +29,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         MO(1),   MO(2),   KC_SPC,   KC_ENT
     ),
 	[1] = LAYOUT(
-		M_USER1,  M_USER2,  M_ADMIN,   DM_PLY1,
-        KC_F21,   KC_F22,   KC_F23,   DM_REC1,
+		M_USER1,  M_USER2,  M_ADMIN,   M_PIN,
+        KC_F21,   KC_F22,   KC_F23,   M_BIT,
         KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS
 	),
 	[2] = LAYOUT(
@@ -71,6 +71,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t * record) {
 	if (record->event.pressed) //keydown only
 	{
 	SEND_STRING("@coverwise.com");
+	}
+	break;
+	case M_PIN:
+	if(record->event.pressed) //keydown only
+	{
+		SEND_STRING("91298");
+	}
+	break;
+	case M_BIT:
+	if(record->event.pressed) //keydown only
+	{
+		SEND_STRING("892191");
 	}
 	break;
   }
