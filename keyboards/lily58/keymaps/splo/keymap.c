@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,   KC_Q,  KC_W,  KC_F,  KC_P,   KC_B,                     KC_J,    KC_L,     KC_U,       KC_Y,    KC_SCLN, KC_EQUAL,
   KC_LSFT,  KC_A,  KC_R,  KC_S,  KC_T,   KC_G,                     KC_M,    KC_N,     KC_E,       KC_I,    KC_O,    KC_QUOT,
   KC_LCTL,  KC_Z,  KC_X,  KC_C,  KC_D,   KC_V, KC_LBRC,  KC_RBRC,  KC_NUBS, KC_K,     KC_H,       KC_COMM, KC_DOT,  KC_SLSH,
-              KC_LALT, MO(_LOWER), MO(_RAISE), KC_SPC,   KC_ENT,   MO(_GAMMA),  KC_BSPC, KC_RGUI
+              KC_LALT, MO(_LOWER), MO(_RAISE), KC_SPC,   KC_ENT,   MO(_GAMMA),  MO(_ADJUST), KC_RGUI
 ),
 /* LOWER
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -95,21 +95,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      |      |      |      |                    |      |   7  |  8   |   9  |      |  DEL |
+ * |      |      |      |      |      |      |                    |      |      | AS(F)|      |      |  DEL |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------.    ,-------|      |   4  |  5   |   6  |      |      |
+ * |      |      |      |      |      |      |-------.    ,-------|      | AS(R)| AS(S)| AS(T)|      |      |
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------|    |-------|  -   |   1  |   2  |   3  |      |  #   |
+ * |      |      |      |      |      |      |-------|    |-------|  -   |      |      |      |      |  #   |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *                   | LAlt | LOWER |RAISE | /Space /       \Enter \  |RAISE |   0   | APP |
- *                   |      |       |      |/      /         \      \ |      |      |      |
+ *                   |      |       |      |/      /         \      \ |      |       |     |
  *                   `----------------------------'           '------''--------------------'
  */
   [_GAMMA] = LAYOUT(
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_P7,   KC_P8,   KC_P9,   XXXXXXX, KC_DEL,
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_P4,   KC_P5,   KC_P6,   XXXXXXX, XXXXXXX,
-  XXXXXXX, C(KC_Z), C(KC_X), C(KC_C), _______, C(KC_V), KC_HOME, KC_END,  KC_MINS, KC_P1,   KC_P2,   KC_P3,   XXXXXXX, KC_NUHS,
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX, XXXXXXX,
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, _______,   LSA(KC_F), _______,   XXXXXXX, KC_DEL,
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, LSA(KC_R), LSA(KC_S), LSA(KC_T), XXXXXXX, XXXXXXX,
+  XXXXXXX, C(KC_Z), C(KC_X), C(KC_C), _______, C(KC_V), KC_HOME, KC_END,  KC_MINS, _______,   _______,   _______,   XXXXXXX, KC_NUHS,
                              _______, _______, _______, _______, _______,  _______, _______, KC_APP
   ),
   /* ADJUST
@@ -118,9 +118,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |      |      |      |      |      |                    |      |   7  |  8   |   9  |      |  DEL |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------.    ,-------|      |   4   |  5  |   6  | SAT+ | VAL+ |
+ * |      |      |      |      |      |      |-------.    ,-------|      |   4  |  5   |   6  | SAT+ | VAL+ |
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------|    |-------|  -   |   1  |   2  |   3  | SAT- |  #   |
+ * |      |      |      |      |      |      |-------|    |-------|  -   |   1  |  2   |   3  | SAT- |  #   |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *                   | LAlt | LOWER |RAISE | /Space /       \Enter \  |RAISE |   0  | APP  |
  *                   |      |       |      |/      /         \      \ |      |      |      |
@@ -128,9 +128,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [_ADJUST] = LAYOUT(
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_P7, KC_P8, KC_P9, XXXXXXX, KC_DEL,
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_P4, KC_P5, KC_P6, XXXXXXX, XXXXXXX,
-  XXXXXXX, C(KC_Z), C(KC_X), C(KC_C), _______, C(KC_V), XXXXXXX, XXXXXXX, XXXXXXX, KC_P1, KC_P2, KC_P3, XXXXXXX, KC_NUHS,
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_P7,   KC_P8,   KC_P9,   XXXXXXX, KC_DEL,
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_P4,   KC_P5,   KC_P6,   XXXXXXX, XXXXXXX,
+  XXXXXXX, C(KC_Z), C(KC_X), C(KC_C), _______, C(KC_V), XXXXXXX, XXXXXXX, XXXXXXX, KC_P1,   KC_P2,   KC_P3,   XXXXXXX, KC_NUHS,
                              _______, _______, _______, _______, _______,  _______, _______, KC_APP
   )
 };
