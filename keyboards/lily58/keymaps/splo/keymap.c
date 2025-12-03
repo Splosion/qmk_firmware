@@ -75,9 +75,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | PLAY1| REC1 |  <<  |  UP  |  >>  | PLAY |                    |   6  |   7  |   8  |   9  |   0  |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      | LEFT | DOWN | RIGHT| VOLU |-------.    ,-------|      | Left | Down |  Up  |Right |      |
+ * |   `  | AS(F)| LEFT | DOWN | RIGHT| VOLU |-------.    ,-------|      | Left | Down |  Up  |Right |      |
  * |------+------+------+------+------+------|   [   |    |    ]  |------+------+------+------+------+------|
- * |   `  |      |   R  |   S  |   T  | VOLD |-------|    |-------|   +  |   -  |   =  |   [  |   ]  |   \  |
+ * | AS(R)| AS(S)| AS(T)|      |      | VOLD |-------|    |-------|   +  |   -  |   =  |   [  |   ]  |   \  |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *                   | LAlt | LOWER |RAISE | /Space /       \Enter \  |RAISE |BackSP| RGUI |
  *                   |      |       |      |/      /         \      \ |      |      |      |
@@ -109,7 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_P7,   KC_P8,   KC_P9,   XXXXXXX, KC_DEL,
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_P4,   KC_P5,   KC_P6,   XXXXXXX, XXXXXXX,
-  XXXXXXX, C(KC_Z), C(KC_X), C(KC_C), _______, C(KC_V), KC_HOME, KC_END,  KC_MINS, KC_P1,   KC_P2,   KC_P3, XXXXXXX, KC_NUHS,
+  XXXXXXX, C(KC_Z), C(KC_X), C(KC_C), _______, C(KC_V), KC_HOME, KC_END,  KC_MINS, KC_P1,   KC_P2,   KC_P3,   XXXXXXX, KC_NUHS,
                              _______, _______, _______, _______, _______,  _______, _______, KC_APP
   ),
   /* ADJUST
@@ -122,7 +122,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
  * |      |      |      |      |      |      |-------|    |-------|  -   |   1  |   2  |   3  | SAT- |  #   |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   | LAlt | LOWER |RAISE | /Space /       \Enter \  |RAISE |   0   | APP |
+ *                   | LAlt | LOWER |RAISE | /Space /       \Enter \  |RAISE |   0  | APP  |
  *                   |      |       |      |/      /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
