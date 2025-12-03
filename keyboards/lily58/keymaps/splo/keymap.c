@@ -1,5 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "sendstring_uk.h" //uk keylayout
+#include <stdlib.h>
 
 enum layer_number {
   _QWERTY = 0,
@@ -84,10 +85,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 // https://docs.qmk.fm/features/dynamic_macros
 [_RAISE] = LAYOUT(
-  M_ADMIN, M_USER1, M_USER2,   M_PIN,     M_BIT,     M_BIT,                      _______, _______, _______, _______, _______, _______,
-  DM_PLY1, DM_REC1, KC_MPRV,   KC_UP,     KC_MNXT,   KC_MPLY,                    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
-  _______, _______, KC_LEFT,   KC_DOWN,   KC_RGHT,   KC_VOLU,                    XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,
-  KC_GRV,  _______, LSA(KC_R), LSA(KC_S), LSA(KC_T), KC_VOLD,  _______, _______, KC_MINS, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
+  M_ADMIN,   M_USER1,   M_USER2,   M_PIN,   M_BIT,   M_BIT,                      _______, _______, _______, _______, _______, _______,
+  DM_PLY1,   DM_REC1,   KC_MPRV,   KC_UP,   KC_MNXT, KC_MPLY,                    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
+  KC_GRV,    LSA(KC_F), KC_LEFT,   KC_DOWN, KC_RGHT, KC_VOLU,                    XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,
+  LSA(KC_R), LSA(KC_S), LSA(KC_T), _______, _______, KC_VOLD,  _______, _______, KC_MINS, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
                                    _______, _______, _______,  _______, _______,  _______, _______, _______
 ),
 /* GAMMA
@@ -138,10 +139,18 @@ layer_state_t layer_state_set_user(layer_state_t state) {
   return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
 }
 
+uint32_t rand_return(void) {
+	uint32_t upper_bound = 150000; //2min 30sec
+	uint32_t lower_bound = 90000; //1min 30sec
+	uint32_t value = rand() % (upper_bound - lower_bound + 1)
+                    + lower_bound;
+	return value;
+	
+}
 
 uint32_t anti_afk_callback(uint32_t trigger_time, void *cb_arg) {
     /* do something */
-    SEND_STRING(SS_TAP(X_LCTL));
+	SEND_STRING(SS_TAP(X_LCTL));
 	
     return rand_return();
 }
@@ -150,14 +159,6 @@ void keyboard_post_init_user(void) {
 	defer_exec(1,anti_afk_callback,NULL);
 }
 
-int rand_return(void) {
-	int upper_bound = 150000; //2min 30sec
-	int lower_bound = 90000; //1min 30sec
-	int value = rand() % (upper_bound - lower_bound + 1)
-                    + lower_bound;
-	return value;
-	
-}
 
 //SSD1306 OLED update loop, make sure to enable OLED_ENABLE=yes in rules.mk
 #ifdef OLED_ENABLE
