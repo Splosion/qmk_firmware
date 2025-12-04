@@ -85,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 // https://docs.qmk.fm/features/dynamic_macros
 [_RAISE] = LAYOUT(
-  M_ADMIN,   M_USER1,   M_USER2,   M_PIN,   M_BIT,   M_BIT,                      _______, _______, _______, _______, _______, _______,
+  M_ADMIN,   M_USER1,   M_USER2,   M_PIN,   M_BIT,   _______,                      _______, _______, _______, _______, _______, _______,
   DM_PLY1,   DM_REC1,   KC_MPRV,   KC_UP,   KC_MNXT, KC_MPLY,                    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
   KC_GRV,    LSA(KC_F), KC_LEFT,   KC_DOWN, KC_RGHT, KC_VOLU,                    XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,
   LSA(KC_R), LSA(KC_S), LSA(KC_T), _______, _______, KC_VOLD,  _______, _______, KC_MINS, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
@@ -95,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      |      |      |      |                    |      |      | AS(F)|      |      |  DEL |
+ * |      |      |      |      |      |      |                    |      |      | AS(F)|      |      |  A( |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |      |      |      |      |      |-------.    ,-------|      | AS(R)| AS(S)| AS(T)|      |      |
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
@@ -106,14 +106,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                   `----------------------------'           '------''--------------------'
  */
   [_GAMMA] = LAYOUT(
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX, XXXXXXX,
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, _______,   LSA(KC_F), _______,   XXXXXXX, KC_DEL,
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, LSA(KC_R), LSA(KC_S), LSA(KC_T), XXXXXXX, XXXXXXX,
-  XXXXXXX, C(KC_Z), C(KC_X), C(KC_C), _______, C(KC_V), KC_HOME, KC_END,  KC_MINS, _______,   _______,   _______,   XXXXXXX, KC_NUHS,
+  XXXXXXX, LSA(KC_1), LSA(KC_2), LSA(KC_3), LSA(KC_4), LSA(KC_5),                   XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX, XXXXXXX,
+  XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,                     XXXXXXX, LSA(KC_U), LSA(KC_F), _______,   _______, A(KC_EQUAL),
+  XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,                     XXXXXXX, LSA(KC_R), LSA(KC_S), LSA(KC_T), _______, A(KC_QUOT),
+  XXXXXXX, C(KC_Z),   C(KC_X),   C(KC_C),   _______,   C(KC_V), KC_HOME, KC_END,    KC_MINS, _______,   _______,   _______,   XXXXXXX, KC_NUHS,
                              _______, _______, _______, _______, _______,  _______, _______, KC_APP
   ),
   /* ADJUST
- * ,-----------------------------------------.                    ,-----------------------------------------.
+ * ,-----------------------------------------.                    ,-----------------------------------------.ne
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |      |      |      |      |      |                    |      |   7  |  8   |   9  |      |  DEL |
