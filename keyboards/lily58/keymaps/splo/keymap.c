@@ -6,6 +6,7 @@ enum layer_number {
   _QWERTY = 0,
   _LOWER,
   _RAISE,
+  _BETA,
   _GAMMA,
   _ADJUST,
 };
@@ -46,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,   KC_Q,  KC_W,  KC_F,  KC_P,   KC_B,                     KC_J,    KC_L,     KC_U,       KC_Y,    KC_SCLN, KC_EQUAL,
   KC_LSFT,  KC_A,  KC_R,  KC_S,  KC_T,   KC_G,                     KC_M,    KC_N,     KC_E,       KC_I,    KC_O,    KC_QUOT,
   KC_LCTL,  KC_Z,  KC_X,  KC_C,  KC_D,   KC_V, KC_LBRC,  KC_RBRC,  KC_NUBS, KC_K,     KC_H,       KC_COMM, KC_DOT,  KC_SLSH,
-              KC_LALT, MO(_LOWER), MO(_RAISE), KC_SPC,   KC_ENT,   MO(_GAMMA),  MO(_ADJUST), KC_RGUI
+              KC_LALT, MO(_LOWER), MO(_RAISE), KC_SPC,   KC_ENT,   MO(_GAMMA),  MO(_BETA), KC_RGUI
 ),
 /* LOWER
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -63,11 +64,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                   `----------------------------'           '------''--------------------'
  */
 [_LOWER] = LAYOUT(
-  KC_F12,  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,                    KC_F5,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
-  _______, KC_F13, KC_F14, KC_F15, KC_F16, KC_MUTE,                  KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
-  KC_GRV,  KC_F17, KC_F18, KC_F19, KC_F20, KC_VOLU,                  KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_TILD,
-  _______, KC_F21, KC_F22, KC_F23, KC_F24, KC_VOLD, KC_HOME, KC_END, XXXXXXX, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE,
-                         G(KC_L), _______, _______, KC_GRV,  _______,  _______, _______, _______
+  KC_F12,  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,                     KC_F5,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
+  _______, KC_F13, KC_F14, KC_F15, KC_F16, KC_MUTE,                   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
+  KC_GRV,  KC_F17, KC_F18, KC_F19, KC_F20, KC_VOLU,                   KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_TILD,
+  _______, KC_F21, KC_F22, KC_F23, KC_F24, KC_VOLD, KC_HOME, KC_END,  XXXXXXX, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE,
+                         G(KC_L), _______, _______, KC_GRV,  _______, _______, _______, _______
 ),
 /* RAISE
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -85,12 +86,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 // https://docs.qmk.fm/features/dynamic_macros
 [_RAISE] = LAYOUT(
-  M_ADMIN,   M_USER1,   M_USER2,   M_PIN,   M_BIT,   _______,                      _______, _______, _______, _______, _______, _______,
+  M_ADMIN,   M_USER1,   M_USER2,   M_PIN,   M_BIT,   _______,                    _______, _______, _______, _______, _______, _______,
   DM_PLY1,   DM_REC1,   KC_MPRV,   KC_UP,   KC_MNXT, KC_MPLY,                    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
   KC_GRV,    LSA(KC_F), KC_LEFT,   KC_DOWN, KC_RGHT, KC_VOLU,                    XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,
   LSA(KC_R), LSA(KC_S), LSA(KC_T), _______, _______, KC_VOLD,  _______, _______, KC_MINS, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
-                                   _______, _______, _______,  _______, _______,  _______, _______, _______
+                                   _______, _______, _______,  _______, _______, _______, _______, _______
 ),
+
+  /* BETA
+ * ,-----------------------------------------.                    ,-----------------------------------------.ne
+ * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |                    |      |   7  |  8   |   9  |      |  DEL |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |-------.    ,-------|      |   4  |  5   |   6  | SAT+ | VAL+ |
+ * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |-------|    |-------|  -   |   1  |  2   |   3  | SAT- |  #   |
+ * `-----------------------------------------/       /     \      \-----------------------------------------'
+ *                   | LAlt | LOWER |RAISE | /Space /       \Enter \  |RAISE |   0  | APP  |
+ *                   |      |       |      |/      /         \      \ |      |      |      |
+ *                   `----------------------------'           '------''--------------------'
+ */
+  [_BETA] = LAYOUT(
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_P7,   KC_P8,   KC_P9,   XXXXXXX, KC_DEL,
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_P4,   KC_P5,   KC_P6,   XXXXXXX, XXXXXXX,
+  XXXXXXX, C(KC_Z), C(KC_X), C(KC_C), _______, C(KC_V), XXXXXXX, XXXXXXX, XXXXXXX, KC_P1,   KC_P2,   KC_P3,   XXXXXXX, KC_NUHS,
+                             _______, _______, _______, _______, _______,  _______, _______, KC_APP
+  ),  
 /* GAMMA
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
