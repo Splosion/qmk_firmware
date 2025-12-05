@@ -7,6 +7,13 @@
         "pid": "0x3536",
         "device_version": "0.0.1"
     },
+	 "diode_direction": "COL2ROW",
+    "split": {
+        "enabled": true,
+        "serial": {
+            "pin": "D0"
+        }
+    },
     "rgblight": {
         "led_count": 12
     },
@@ -30,15 +37,7 @@
         "cols": ["D4", "C6", "D7", "E6", "B4", "B5"],
         "rows": ["F6", "F7", "B1", "B3", "B2", "B6"]
     },
-    "diode_direction": "COL2ROW",
-    "split": {
-        "enabled": true,
-        "serial": {
-            "pin": "D0"
-        }
-    },
-    "processor": "atmega32u4",
-    "bootloader": "caterina",
+    "development_board": "promicro",
     "layouts": {
         "LAYOUT_5x6": {
             "layout": [
