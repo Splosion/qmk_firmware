@@ -33,7 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|   [   |    |    ]  |------+------+------+------+------+------|
  * |LCtrl |   Z  |   X  |   C  |   D  |   V  |-------|    |-------|   \  |   K  |   H  |   ,  |   .  |  /   |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   | LAlt | LOWER |RAISE | /Space /       \Enter \  |GAMMA |BackSP| RGUI |
+ *                   | LAlt | LOWER |RAISE | /Space /       \Enter \  |GAMMA | BETA | RGUI |
  *                   |      |       |      |/      /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
@@ -64,8 +64,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                   `----------------------------'           '------''--------------------'
  */
 [_LOWER] = LAYOUT(
-  KC_F12,  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,                     KC_F5,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
-  _______, KC_F13, KC_F14, KC_F15, KC_F16, KC_MUTE,                   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
+  KC_F12,  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,                     KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
+  _______, KC_F13, KC_F14, KC_F15, KC_F16, KC_MUTE,                   _______, _______, _______, _______, _______, _______,
   KC_GRV,  KC_F17, KC_F18, KC_F19, KC_F20, KC_VOLU,                   KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_TILD,
   _______, KC_F21, KC_F22, KC_F23, KC_F24, KC_VOLD, KC_HOME, KC_END,  XXXXXXX, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE,
                          G(KC_L), _______, _______, KC_GRV,  _______, _______, _______, _______
@@ -86,11 +86,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 // https://docs.qmk.fm/features/dynamic_macros
 [_RAISE] = LAYOUT(
-  M_ADMIN,   M_USER1,   M_USER2,   M_PIN,   M_BIT,   _______,                    _______, _______, _______, _______, _______, _______,
-  DM_PLY1,   DM_REC1,   KC_MPRV,   KC_UP,   KC_MNXT, KC_MPLY,                    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
-  KC_GRV,    LSA(KC_F), KC_LEFT,   KC_DOWN, KC_RGHT, KC_VOLU,                    XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,
-  LSA(KC_R), LSA(KC_S), LSA(KC_T), _______, _______, KC_VOLD,  _______, _______, KC_MINS, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
-                                   _______, _______, _______,  _______, _______, _______, _______, _______
+  M_ADMIN, M_USER1, M_USER2, M_PIN,   M_BIT,   _______,                    _______, _______, _______, _______, _______, _______,
+  DM_PLY1, DM_REC1, KC_MPRV, KC_UP,   KC_MNXT, KC_MPLY,                    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
+  KC_GRV,  A(KC_F), KC_LEFT, KC_DOWN, KC_RGHT, KC_VOLU,                    XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,
+  A(KC_R), A(KC_S), A(KC_T), _______, _______, KC_VOLD,  _______, _______, KC_MINS, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
+                             _______, _______, _______,  _______, _______, _______, _______, _______
 ),
 
   /* BETA
@@ -130,9 +130,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [_GAMMA] = LAYOUT(
   XXXXXXX, LSA(KC_1), LSA(KC_2), LSA(KC_3), LSA(KC_4), LSA(KC_5),                   XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX, KC_DEL,
-  XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,                     XXXXXXX, LSA(KC_U), LSA(KC_F), _______,   A(KC_X), A(KC_EQUAL),
-  XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,                     XXXXXXX, LSA(KC_R), LSA(KC_S), LSA(KC_T), A(KC_Y), A(KC_QUOT),
-  XXXXXXX, C(KC_Z),   C(KC_X),   C(KC_C),   _______,   C(KC_V), KC_HOME, KC_END,    KC_MINS, _______,   _______,   _______,   XXXXXXX, KC_NUHS,
+  XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,                     XXXXXXX, LSA(KC_U), LSA(KC_F), A(KC_Y),   A(KC_X), A(KC_EQUAL),
+  XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,                     XXXXXXX, LSA(KC_R), LSA(KC_S), LSA(KC_T), A(KC_F), A(KC_QUOT),
+  XXXXXXX, C(KC_Z),   C(KC_X),   C(KC_C),   _______,   C(KC_V), KC_HOME, KC_END,    KC_MINS, _______,   _______,   A(KC_R),   A(KC_S), A(KC_T),
                              _______, _______, _______, _______, _______,  _______, _______, KC_APP
   ),
   /* ADJUST
