@@ -7,7 +7,7 @@
         "pid": "0x3536",
         "device_version": "0.0.1"
     },
-	 "diode_direction": "COL2ROW",
+	"diode_direction": "COL2ROW",
     "split": {
         "enabled": true,
         "serial": {
