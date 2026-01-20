@@ -129,11 +129,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                   `----------------------------'           '------''--------------------'
  */
   [_GAMMA] = LAYOUT(
-  XXXXXXX, LSA(KC_1), LSA(KC_2), LSA(KC_3), LSA(KC_4), LSA(KC_5),                   XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX, KC_DEL,
-  XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,                     XXXXXXX, LSA(KC_U), LSA(KC_F), A(KC_Y),   A(KC_X), A(KC_EQUAL),
-  XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,                     XXXXXXX, LSA(KC_R), LSA(KC_S), LSA(KC_T), A(KC_F), A(KC_QUOT),
-  XXXXXXX, C(KC_Z),   C(KC_X),   C(KC_C),   _______,   C(KC_V), KC_HOME, KC_END,    KC_MINS, _______,   _______,   A(KC_R),   A(KC_S), A(KC_T),
-                             _______, _______, _______, _______, _______,  _______, _______, KC_APP
+  XXXXXXX, LSA(KC_1), LSA(KC_2), LSA(KC_3), LSA(KC_4), LSA(KC_5),                 XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX, KC_DEL,
+  XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,                   XXXXXXX, LSA(KC_U), LSA(KC_F), A(KC_Y),   A(KC_X), A(KC_EQUAL),
+  XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,                   XXXXXXX, LSA(KC_R), LSA(KC_S), LSA(KC_T), A(KC_F), A(KC_QUOT),
+  XXXXXXX, C(KC_Z),   C(KC_X),   C(KC_C),   _______,   C(KC_V), KC_HOME, KC_END,  KC_MINS, _______,   _______,   A(KC_R),   A(KC_S), A(KC_T),
+                                 _______,   _______,   _______, _______, _______, _______, _______,   KC_APP
   ),
   /* ADJUST
  * ,-----------------------------------------.                    ,-----------------------------------------.ne
